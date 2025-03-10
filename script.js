@@ -6,7 +6,7 @@ function displayMessage(message) {
   tbody.innerHTML = `<td colspan="6" style="text-align: center;">${message}</td>`;
 }
 
-// Fonction qui apelle les utilsateurs et stock le resultat trié par ordre alphabétique dans une variable globale globale
+// Fonction qui apelle les utilsateurs et stock le resultat trié par ordre alphabétique dans une variable globale
 async function fetchUsers() {
   try {
     displayMessage("Chargement en cours...");
@@ -23,6 +23,7 @@ async function fetchUsers() {
   }
 }
 
+//Fonction pour ajouter des utilisateurs à notre liste existante
 async function addUsers() {
   try {
     if (globalResults && globalResults.length > 0) {
@@ -35,10 +36,11 @@ async function addUsers() {
       );
       render(globalResults);
     } else {
-      displayMessage("Fetch des utilisateurs avant");
+      displayMessage("Veuiez Fetch des utilisateurs dans un premier temps");
     }
   } catch (error) {
     console.error("Error fetching users:", error);
+    displayMessage("Erreur lors du chargement des utilisateurs");
   }
 }
 
@@ -134,7 +136,7 @@ document
   .addEventListener("change", filterUsers);
 document.getElementById("sort-age").addEventListener("change", sortByAge);
 
-// Au chargment de la page, j'affice un message de base dans le tableau qui est vide
+// Au chargment de la page, j'affiche un message initial dans le tableau qui est vide
 document.addEventListener("DOMContentLoaded", () => {
   displayMessage("Aucun utilisateur chargé");
 });
