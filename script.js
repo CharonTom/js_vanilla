@@ -104,7 +104,15 @@ function sortByAge() {
 // Fonction qui recherche les utilisateurs via le champ de recherche, casse comprise,
 //  la gestion des accents est déjà gérer par javascript de manière native et inclusive
 function search() {
-  const searchValue = document.getElementById("search").value.toLowerCase();
+  const searchValue = document
+    .getElementById("search")
+    .value.trim()
+    .toLowerCase();
+
+  if (searchValue === "") {
+    render(globalResults);
+    return;
+  }
 
   const filteredResults = globalResults.filter(
     (user) =>
