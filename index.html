@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vanilla JS Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <div>
+        <h1 class="title">Vanilla JS Exercice</h1>
+        <hr />
+        <label for="filter-gender">Filter by Gender:</label>
+        <select id="filter-gender">
+          <option value="all">All</option>
+          <option value="male">Men</option>
+          <option value="female">Women</option>
+        </select>
+
+        <label for="sort-age">Sort by age</label>
+        <select id="sort-age">
+          <option value="none">No Filters</option>
+          <option value="older-first">Older</option>
+          <option value="younger-first">Younger</option>
+        </select>
+
+        <label for="search">Search:</label>
+        <div style="display: flex; gap: 30px">
+          <input placeholder="search by Name" type="text" id="search" />
+          <button id="search-button">Search</button>
+        </div>
+
+        <button id="fetch-users">Fetch Users</button>
+        <button id="add-users">Add Users</button>
+      </div>
+      <table id="tbl-users">
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Tel</th>
+            <th>Gender</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
+  </body>
+</html>
